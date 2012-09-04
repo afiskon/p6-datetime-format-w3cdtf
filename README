@@ -1,0 +1,21 @@
+A Perl 6 module to deal with W3CDTF dates.
+
+    use DateTime::Format::W3CDTF;
+
+    my $w3c = DateTime::Format::W3CDTF.new;
+    my DateTime $datetime = $w3c.parse('2012-09-04T11:22:33.5+04:00');
+    say $w3c.format($datetime);
+ 
+All files (unless noted otherwise) can be used, modified and redistributed
+under the terms of the Artistic License Version 2.
+
+To build and test this module, plese get 'ufo' from
+http://github.com/masak/ufo and run
+
+    ufo
+    make
+    make test
+    make install
+
+Credits
+    Alexandr Alexeev <afiskon@gmail.com>
