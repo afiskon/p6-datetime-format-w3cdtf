@@ -58,7 +58,7 @@ method format (DateTime $date) of Str {
 
 =head1 NAME
 
-A Perl 6 module to deal with W3CDTF dates
+DateTime::Format::W3CDTF - A Perl 6 module to deal with W3CDTF dates
 
 =head1 SYNOPSYS
 
@@ -68,5 +68,19 @@ A Perl 6 module to deal with W3CDTF dates
     my DateTime $datetime = $w3c.parse('2012-09-04T11:22:33.5+04:00');
     say $w3c.format($datetime);
      
-=end pod
+=head1 DESCRIPTION
 
+A Perl 6 module to deal with W3CDTF dates
+
+=head1 AUTHOR
+
+Alexandr Alexeev, <eax at cpan.org> (L<http://eax.me/>)
+
+=head1 COPYRIGHT
+
+Copyright 2012 Alexandr Alexeev
+
+This program is free software; you can redistribute it and/or modify it
+under the same terms as Rakudo Perl 6 itself.
+
+=end pod
