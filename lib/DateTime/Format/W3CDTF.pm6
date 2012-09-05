@@ -58,19 +58,33 @@ method format (DateTime $date) of Str {
 
 =head1 NAME
 
-DateTime::Format::W3CDTF - A Perl 6 module to deal with W3CDTF dates
+DateTime::Format::W3CDTF - A Perl 6 module to deal with W3CDTF dates.
 
 =head1 SYNOPSYS
 
-    use DateTime::Format::W3CDTF;
+=begin code
+use DateTime::Format::W3CDTF;
 
-    my $w3c = DateTime::Format::W3CDTF.new;
-    my DateTime $datetime = $w3c.parse('2012-09-04T11:22:33.5+04:00');
-    say $w3c.format($datetime);
+my $w3c = DateTime::Format::W3CDTF.new;
+my DateTime $datetime = $w3c.parse('2012-09-04T11:22:33.5+04:00');
+say $w3c.format($datetime);
+=end code
      
 =head1 DESCRIPTION
 
-A Perl 6 module to deal with W3CDTF dates
+A Perl 6 module to deal with W3CDTF dates.
+
+=head1 METHODS
+
+=head2 parse(Str $date) of DateTime
+
+Parses the string with W3C-formatted date and returns DateTime object.
+Throws an exception in case of errors.
+
+=head2 format(DateTime $date) of String
+
+Converts DateTime object to the W3C-formatted date string.
+Throws an exception in case of errors.
 
 =head1 AUTHOR
 
