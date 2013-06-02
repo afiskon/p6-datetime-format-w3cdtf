@@ -6,15 +6,14 @@ class DateTime::Format::W3CDTF;
 
 method parse (Str $str) of DateTime {
     my Str $date-str = $str;
-    my Match $m;
 
     # YYYY-MM-DDThh:mm:ss.sTZD --> YYYY-MM-DDThh:mm:ssTZD
-    if $m = $date-str ~~ /^ ( .* T <[0..9]> ** 2 \: <[0..9]> ** 2 \: <[0..9]> ** 2) \. <[0..9]> + ( .*) $/ {
+    if $date-str ~~ /^ ( .* T <[0..9]> ** 2 \: <[0..9]> ** 2 \: <[0..9]> ** 2) \. <[0..9]> + ( .*) $/  -> Match $m {
         $date-str = $m[0] ~ $m[1];
     }
 
     # YYYY-MM-DDThh:mmTZD --> YYYY-MM-DDThh:mm:00TZD
-    if $m = $date-str ~~ /^ ( .* T <[0..9]> ** 2 \: <[0..9]> ** 2 ) ( <[Z+-]> .* ) $/ {
+    if $date-str ~~ /^ ( .* T <[0..9]> ** 2 \: <[0..9]> ** 2 ) ( <[Z+-]> .* ) $/  -> $m {
         $date-str = $m[0] ~ ':00' ~ $m[1];
     }
 
@@ -22,7 +21,7 @@ method parse (Str $str) of DateTime {
         die 'Invalid timezone format';
     }
 
-    if $m = $date-str ~~ /^ ( . ** 16..* <[+-]> <[0..9]> ** 2 ) \: ( <[0..9]> ** 2 ) $/ {
+    if $date-str ~~ /^ ( . ** 16..* <[+-]> <[0..9]> ** 2 ) \: ( <[0..9]> ** 2 ) $/ -> $m {
         $date-str = $m[0] ~ $m[1];
     }
 
