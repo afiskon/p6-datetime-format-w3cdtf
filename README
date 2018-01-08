@@ -32,7 +32,7 @@ Converts DateTime object to the W3C-formatted date string. Throws an exception i
 
 AUTHOR
 
-Alexandr Alexeev, <eax at cpan.org> (http://eax.me/)
+Alexandr Alexeev, <eax at cpan.org> (https://eax.me/)
 
 COPYRIGHT
 
